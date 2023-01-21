@@ -9,13 +9,13 @@
 
           <div class="py-2 bg-white">
             <div class="mt-2">
-              <p>Betsy Bankson</p>
-              <p>Jim Sammet</p>
-              <p>Ernst Schubert</p>
-              <p>Dave Warmenhoven</p>
-              <p>Julia Sargent</p>
-              <p>Barbie McQuay</p>
+              <p>Betsy Bankson - President</p>
+              <p>Dave Warmenhoven - Vice President</p>
+              <p>Julia Sargeant - Secretary and Treasurer</p>
               <p>Matthew Fuhr</p>
+              <p>Barbi McQuay</p>
+              <p>Michelle Peterson</p>
+              <p>Jim Sammet</p>
             </div>
           </div>
 
