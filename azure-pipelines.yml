@@ -19,21 +19,10 @@ steps:
       package-lock.json
       vue.config.js
       nginx.conf
-      .babelrc
-      babel.config.js
-      .browserslistrc
       .eslintrc*
-      jest.config*
       .dockerignore
-      .env*
       tsconfig.json
       Dockerfile
-      Dockerrun.aws.json
-      ecosystem.config.js
-      sshd_config
-      init.sh
-      web.config
-      sitemap.xml
     TargetFolder: '$(Build.StagingDirectory)/'
 
 - task: PublishBuildArtifacts@1
