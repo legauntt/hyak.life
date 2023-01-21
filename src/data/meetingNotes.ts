@@ -26,6 +26,30 @@ const entriesFor2022: IMeeting[] = [
     title: "Minutes",
     filename: "HPOA March 2022 Meeting Minutes.docx",
   },
+  {
+    date: "2022-05-03",
+    category: "regular",
+    title: "Minutes",
+    filename: "May 2022 HPOA Meeting - Google Docs.pdf",
+  },
+  {
+    date: "2022-08-02",
+    category: "regular",
+    title: "Minutes",
+    filename: "August 2022 HPOA Meeting - Google Docs.pdf",
+  },
+  {
+    date: "2022-09-06",
+    category: "regular",
+    title: "Minutes",
+    filename: "September 2022 HPOA Meeting - Google Docs.pdf",
+  },
+  {
+    date: "2022-10-04",
+    category: "regular",
+    title: "No agenda items",
+    filename: "-",
+  },
 ];
 
 /**

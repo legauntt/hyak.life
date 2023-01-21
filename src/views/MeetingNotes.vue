@@ -47,7 +47,8 @@
                   :key="note.date + '_' + note.title"
                 >
                   <td>{{ dateIt(note.date) }}</td>
-                  <td>
+                  <td v-if="note.filename == '-'">No agenda items</td>
+                  <td v-else>
                     <a :href="getLink(note)" target="_blank">{{
                       note.title
                     }}</a>

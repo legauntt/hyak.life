@@ -13,7 +13,7 @@
               <p>Dave Warmenhoven - Vice President</p>
               <p>Julia Sargeant - Secretary and Treasurer</p>
               <p>Matthew Fuhr</p>
-              <p>Barbi McQuay</p>
+              <p>Barbie McQuad</p>
               <p>Michelle Peterson</p>
               <p>Jim Sammet</p>
             </div>
