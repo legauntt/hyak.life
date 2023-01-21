@@ -95,13 +95,7 @@ li {
   cursor: pointer;
 }
 
-.router-link-exact-active {
-  .nav-link {
-    color: white !important;
-  }
+.router-link-exact-active .nav-link {
+  color: white !important;
 }
-
-/* .nav-link {
-  color: inherit;
-} */
 </style>
