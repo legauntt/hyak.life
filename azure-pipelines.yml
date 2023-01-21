@@ -1,0 +1,43 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+
+pr: none
+
+steps:
+- task: CopyFiles@2
+  inputs:
+    Contents: |
+      public/**/*
+      src/**/*
+      package.json
+      package-lock.json
+      vue.config.js
+      nginx.conf
+      .babelrc
+      babel.config.js
+      .browserslistrc
+      .eslintrc*
+      jest.config*
+      .dockerignore
+      .env*
+      tsconfig.json
+      Dockerfile
+      Dockerrun.aws.json
+      ecosystem.config.js
+      sshd_config
+      init.sh
+      web.config
+      sitemap.xml
+    TargetFolder: '$(Build.StagingDirectory)/'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.StagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
