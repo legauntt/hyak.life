@@ -19,6 +19,7 @@ steps:
       package-lock.json
       vue.config.js
       nginx.conf
+      index.html
       .eslintrc*
       .dockerignore
       tsconfig.json
