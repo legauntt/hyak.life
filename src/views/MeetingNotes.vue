@@ -46,13 +46,13 @@
                   v-for="note in filteredMeetingNotes"
                   :key="note.date + '_' + note.title"
                 >
-                  <td>{{ note.date | dated }}</td>
+                  <td>{{ dateIt(note.date) }}</td>
                   <td>
                     <a :href="getLink(note)" target="_blank">{{
                       note.title
                     }}</a>
                   </td>
-                  <td>{{ note.category | capitalize }}</td>
+                  <td>{{ capitalize(note.category) }}</td>
                 </tr>
               </tbody>
             </table>
@@ -63,7 +63,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { MEETING_NOTES_DATA, MEETING_NOTES_YEARS } from "@/data/meetingNotes";
 import moment from "moment";
 
@@ -71,7 +71,7 @@ export default {
   name: "meeting-notes",
   components: {},
   computed: {
-    filteredMeetingNotes: function () {
+    filteredMeetingNotes: function (): any {
       return this.meetingNotes.filter((entry) => {
         // Everything
         if (
@@ -96,11 +96,11 @@ export default {
 
         // All Types
         if (this.selectedType == "All Types") {
-          return entryYear == this.selectedYear;
+          return String(entryYear) == this.selectedYear;
         }
 
         // Wrong year?
-        if (entryYear != this.selectedYear) {
+        if (String(entryYear) != this.selectedYear) {
           return false;
         }
 
@@ -123,18 +123,23 @@ export default {
       selectedType: "All Types",
     };
   },
-  filters: {
-    dated: function (value) {
+  methods: {
+    getLink(note: any) {
+      const year = moment(note.date, moment.ISO_8601).year();
+      return `hyak_files/meeting_notes/${year}/${note.filename}`;
+    },
+
+    dateIt(value: any) {
       if (!value) return "";
 
       const valueAsMoment = moment(value);
       return valueAsMoment.format("MMM D, YYYY");
     },
-  },
-  methods: {
-    getLink(note) {
-      const year = moment(note.date, moment.ISO_8601).year();
-      return `hyak_files/meeting_notes/${year}/${note.filename}`;
+
+    capitalize(value: any) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
     },
   },
 };
