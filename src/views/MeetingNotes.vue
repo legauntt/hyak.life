@@ -25,7 +25,7 @@
                 <option selected>All Types</option>
                 <option>Annual</option>
                 <option>Regular</option>
-                <option>Draft</option>
+                <!-- <option>Draft</option> -->
               </select>
             </div>
           </div>
