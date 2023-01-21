@@ -23,7 +23,10 @@ steps:
       .eslintrc*
       .dockerignore
       tsconfig.json
+      tsconfig.config.json
+      vite.config.ts
       Dockerfile
+      env.d.ts
     TargetFolder: '$(Build.StagingDirectory)/'
 
 - task: PublishBuildArtifacts@1
