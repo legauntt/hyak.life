@@ -230,14 +230,54 @@ const entriesFor2018: IMeeting[] = [
  * 2017 - a year
  */
 const entriesFor2017: IMeeting[] = [
-  // {
-  // }
+  {
+    date: "2017-11-14",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes November 2017.doc",
+  },
+  {
+    date: "2017-09-18",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes September 2017.doc",
+  },
+  {
+    date: "2017-05-08",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes May 2017.doc",
+  },
+  {
+    date: "2017-03-13",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes March 2017.doc",
+  },
 ];
 
 /**
  * 2016 - whew
  */
 const entriesFor2016: IMeeting[] = [
+  {
+    date: "2016-11-14",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes November 2016.doc",
+  },
+  {
+    date: "2016-07-11",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes July 2016.doc",
+  },
+  {
+    date: "2016-06-04",
+    category: "annual",
+    title: "Annual Minutes",
+    filename: "2016 HPOA Annual Meeting Minutes.docx",
+  },
   {
     date: "2016-05-09",
     category: "regular",
