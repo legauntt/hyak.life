@@ -54,7 +54,7 @@
               data-toggle="collapse"
               data-target=".navbar-collapse.show"
             >
-              <span class="nav-link">Division Maps</span>
+              <span class="nav-link">Documents</span>
             </li>
           </router-link>
 

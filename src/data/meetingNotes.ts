@@ -11,6 +11,18 @@ export interface IMeeting {
 }
 
 /**
+ * 2023!
+ */
+const entriesFor2023: IMeeting[] = [
+  {
+    date: "2023-01-03",
+    category: "regular",
+    title: "Minutes",
+    filename: "January 2023 HPOA Meeting Minutes DRAFT.docx",
+  },
+];
+
+/**
  * 2022 - Unexpected.
  */
 const entriesFor2022: IMeeting[] = [
@@ -671,6 +683,7 @@ const entriesFor2007: IMeeting[] = [
 ];
 
 const allEntries: IMeeting[] = ([] as IMeeting[]).concat(
+  entriesFor2023,
   entriesFor2022,
   entriesFor2021,
   entriesFor2020,
