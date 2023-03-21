@@ -26,7 +26,7 @@
             <p class="lead">
               <a
                 target="_blank"
-                href="https://en.wikipedia.org/wiki/Hyak,_Washington"
+                href="https://en.wikipedia.org/wiki/Hyak,_Washington?ref=hyak"
                 >Hyak</a
               >
               is a growing community located on Snoqualmie Pass, WA.
