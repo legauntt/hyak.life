@@ -4,6 +4,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+          <div class="alert alert-danger alert-dismissible fade show mt-2">
+            Social Media Policy and Ethics Code (for board members) added under
+            <router-link to="/policies">Policies</router-link>.
+          </div>
           <div
             v-if="onTime"
             class="alert alert-info alert-dismissible fade show mt-2"
