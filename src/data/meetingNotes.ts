@@ -20,6 +20,12 @@ const entriesFor2023: IMeeting[] = [
     title: "Minutes",
     filename: "January 2023 HPOA Meeting Minutes DRAFT.docx",
   },
+  {
+    date: "2023-02-07",
+    category: "regular",
+    title: "Minutes",
+    filename: "February 2023 Meeting Minutes HPOA .pdf",
+  },
 ];
 
 /**

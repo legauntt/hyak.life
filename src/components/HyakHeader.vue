@@ -38,6 +38,16 @@
             </li>
           </router-link>
 
+          <router-link to="/policies">
+            <li
+              class="nav-item"
+              data-toggle="collapse"
+              data-target=".navbar-collapse.show"
+            >
+              <span class="nav-link">Policies</span>
+            </li>
+          </router-link>
+
           <router-link to="/meeting_notes">
             <li
               class="nav-item"

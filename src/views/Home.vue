@@ -4,8 +4,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          
-			<div v-if="onTime"
+          <div
+            v-if="onTime"
             class="alert alert-info alert-dismissible fade show mt-2"
             role="alert"
           >
@@ -55,7 +55,16 @@
             </p>
 
             <div class="mt-3 ml-3 mr-3">
-<pre style="background: #FFF0D5; border: 1px black solid; padding: 20px; text-align: left; white-space: pre-wrap;" v-if="onTime">
+              <pre
+                style="
+                  background: #fff0d5;
+                  border: 1px black solid;
+                  padding: 20px;
+                  text-align: left;
+                  white-space: pre-wrap;
+                "
+                v-if="onTime"
+              >
 <h3>Upcoming Meeting Agenda for Tuesday, April 4th</h3>
 
 1) Meeting Called to order
@@ -127,14 +136,13 @@ export default {
   },
 
   computed: {
-
-	// only show the upcoming agenda until a little after the meeting date (March 7th)
-	onTime() {
-		const now = moment();
-		const later = moment('2023-04-05 02:00');
-		return now.isBefore(later);
-	}
-  }
+    // only show the upcoming agenda until a little after the meeting date (March 7th)
+    onTime() {
+      const now = moment();
+      const later = moment("2023-04-05 02:00");
+      return now.isBefore(later);
+    },
+  },
 };
 </script>
 

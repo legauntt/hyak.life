@@ -37,6 +37,11 @@ const routes = [
     component: () => import("../views/DivisionMaps.vue"),
   },
   {
+    path: "/policies",
+    name: "policies",
+    component: () => import("../views/Policies.vue"),
+  },
+  {
     path: "/404",
     name: "not found",
     component: () => import("../views/NotFound.vue"),
