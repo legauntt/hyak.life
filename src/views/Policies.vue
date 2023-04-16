@@ -12,16 +12,18 @@
               <p>
                 <a
                   href="hyak_files/policies/HPOA Ethics Code Final.pdf"
-                  target="_blank" style="font-size: 1.25rem;"
-                  >Social Media Policy</a
+                  target="_blank"
+                  style="font-size: 1.25rem"
+                  >Ethics Code</a
                 >
               </p>
               <hr />
               <p>
                 <a
                   href="hyak_files/policies/HPOA Social Media Policy 4.4.2023.pdf"
-                  target="_blank" style="font-size: 1.25rem;"
-                  >Ethics Code</a
+                  target="_blank"
+                  style="font-size: 1.25rem"
+                  >Social Media Policy</a
                 >
               </p>
             </div>
