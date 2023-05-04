@@ -8,6 +8,10 @@ export interface IMeeting {
   category: string;
   title: string;
   filename: string;
+  recording?: {
+    link: string;
+    passCode: string;
+  };
 }
 
 /**
@@ -25,6 +29,28 @@ const entriesFor2023: IMeeting[] = [
     category: "regular",
     title: "Minutes",
     filename: "February 2023 Meeting Minutes HPOA .pdf",
+  },
+  {
+    date: "2023-03-07",
+    category: "regular",
+    title: "No quorum",
+    filename: "-",
+  },
+  {
+    date: "2023-04-04",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Board Meeting  4_4_23 Notes.docx",
+  },
+  {
+    date: "2023-05-02",
+    category: "recording",
+    title: "Recording",
+    filename: "-",
+    recording: {
+      link: "https://zoom.us/rec/share/4CBCz5TKkloNPjD3xMOKLygaT0jBKmk6XGK6uMCOG-aEOuMsgL8q68EKkSuHewgu.YeN3pQlA_usKKljs",
+      passCode: "=1QN1&cs",
+    },
   },
 ];
 

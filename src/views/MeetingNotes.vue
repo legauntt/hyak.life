@@ -8,23 +8,18 @@
 
           <div class="row">
             <div class="col-lg-6">
-              <select
-                class="form-control form-control-lg"
-                v-model="selectedYear"
-              >
+              <select class="form-control form-control-lg" v-model="selectedYear">
                 <option selected>All Years</option>
                 <option v-for="year in years" :key="year">{{ year }}</option>
               </select>
             </div>
 
             <div class="col-lg-6">
-              <select
-                class="form-control form-control-lg"
-                v-model="selectedType"
-              >
+              <select class="form-control form-control-lg" v-model="selectedType">
                 <option selected>All Types</option>
                 <option>Annual</option>
                 <option>Regular</option>
+                <option>Recording</option>
                 <!-- <option>Draft</option> -->
               </select>
             </div>
@@ -42,12 +37,31 @@
               </thead>
 
               <tbody>
-                <tr
-                  v-for="note in filteredMeetingNotes"
-                  :key="note.date + '_' + note.title"
-                >
+                <tr v-for="note in filteredMeetingNotes" :key="note.date + '_' + note.title">
                   <td>{{ dateIt(note.date) }}</td>
-                  <td v-if="note.filename == '-'">No agenda items</td>
+
+                  <td v-if="note.recording">
+                    <a target="_blank" :href="note.recording.link">Zoom Share</a>
+                    <br />
+
+                    <div v-if="!note.showPassCode" @click="showPassCode(note)" style="
+                        color: black;
+                        text-decoration: underline;
+                        cursor: pointer;
+                        margin-top: 5px;
+                        font-size: 0.9rem;
+                      ">Show Pass Code</div>
+
+                    <div v-if="note.showPassCode">
+                      Pass Code:<br />{{
+                        note.recording.passCode
+                      }}
+                      <br />
+                      <button class="btn btn-sm btn-info" @click="copyPasscode(note)">Copy</button>
+                    </div>
+
+                  </td>
+                  <td v-else-if="note.filename == '-'">{{ note.title }}</td>
                   <td v-else>
                     <a :href="getLink(note)" target="_blank">{{
                       note.title
@@ -88,7 +102,10 @@ export default {
             return entry.category && entry.category.toLowerCase() == "annual";
           } else if (this.selectedType.toLowerCase() == "draft") {
             return entry.category && entry.category.toLowerCase() == "draft";
-          } else {
+          } else if (this.selectedType.toLowerCase() == "recording") {
+            return entry.category && entry.category.toLowerCase() == "recording";
+          }
+          else {
             return entry.category && entry.category.toLowerCase() == "regular";
           }
         }
@@ -130,11 +147,24 @@ export default {
       return `hyak_files/meeting_notes/${year}/${note.filename}`;
     },
 
+    showPassCode(note: any) {
+      note.showPassCode = true;
+    },
+
     dateIt(value: any) {
       if (!value) return "";
 
       const valueAsMoment = moment(value);
       return valueAsMoment.format("MMM D, YYYY");
+    },
+
+    copyPasscode(note: any) {
+      navigator.clipboard.writeText(note.recording.passCode).then(function () {
+        console.log('Async: Copying to clipboard was successful!');
+        alert(`Copied to clipboard: "${note.recording.passCode}" - Zoom will ask for this password before viewing the recording.`);
+      }, function (err) {
+        alert(`Failed to copy to clipboard: ${note.recording.passCode} - you can type it manually on Zoom website.`);
+      });
     },
 
     capitalize(value: any) {
