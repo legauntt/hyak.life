@@ -4,16 +4,17 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="alert alert-secondary alert-dismissible fade show mt-2">
+          
+          <!-- <div class="alert alert-secondary alert-dismissible fade show mt-2">
             Social Media Policy and Ethics Code (for board members) added under
             <router-link to="/policies">Policies</router-link>.
-          </div>
+          </div> -->
           <div
             v-if="onTime"
             class="alert alert-info alert-dismissible fade show mt-2"
             role="alert"
           >
-            The next meeting is May 2nd at 6:30pm
+            The next meeting is June 6th at 6:30pm
 
             <button
               type="button"
@@ -69,67 +70,60 @@
                 "
                 v-if="onTime"
               >
-<h3>Upcoming Meeting Agenda for Tuesday, May 2nd</h3>
+<h3>Upcoming Meeting Agenda for Tuesday, June 6th</h3>
+1) Meeting Called to order
+  a. Board members present
+  b. Welcome guests
 
-1) Meeting Called to order 
-	a. Board members present
-	b. Welcome guests
+2) New Board Members
+  a. Election of positions
+    i. President
+    ii. Vice President
+    iii. Secretary
+  iv. Treasurer
+    b. Building Committee
 
-2) Meeting Minutes Approval from 
-	a. 04/04/2022 Meeting
+3) Meeting Minutes Approval from
+  a. 05/02/2022 Meeting
 
-3) Report of Administrator
-	a. Attachments
-	b. Annual Budget
-	c. Emailing and mailing invoices
+4) Report of Administrator
+  a. Attachments
+  b. Annual Budget
 
-4) Building Committee: (Building applications are accepted up to 10 days prior to meetings)
-	a. Lot 54 Gagnon
-	b. 321 Innsbruck - Michael and Tasha James
+5) Building Committee: (Building applications are accepted up to 10 days prior to meetings)
+  a. Lot 54 Gagnon
+  b. 321 Innsbruck - Michael and Tasha James
+  c. Lot 48 – Renich (tree removal)
 
-5) Old Business
-	a. Bylaw’s Committee Update
-	i. STVR and Building Committee Building Guidelines Surveys
-	b. Building Committee Updated 
-	i. New building application
-	c. Community Newsletter
-	i. Social media, quarterly and email
-	d. Insurance policy (updating current policy)
-	e. WM Garbage Service
-	f. Covenants Enforcement Policy –
-	i. Signage definition from Bylaws
-	ii. Fences
-	g. Hiring a second Legal Representation specializing in HOA 
-	h. County Roads Chipping / Sealing schedule
-	
-6) New Business
-	a. Annual Meeting and Neighborhood cleanup – dates and budget details
-	b. Annual Mailer and Ballots 
-	c. HPOA Zoom Account
-	d. Discussion on releasing plans submitted to building committee
-	e. Dave: Entire board input and review of the documents the Bauer's supplied to the Board on 
-	April 4, 2023 and include the Elimination of a Segment of Easement document.
-	f. Dave: Have a discussion relating to if the Board needs to establish any action points relating to 
-	the above documents.
-	g. Dave: Regarding WUCOIA - I was provided 2 slides by Kyle Tibbs of WSCAI. I think if a new 
-	attorney is selected, it would be best navigated with that individual as I am sure there will be 
-	some new governing documents that will need to be executed. The biggest positive I am aware 
-	of is the reduction in homeowner voting thresholds to pass new Bylaws and Covenants. 
-	h. Dave: I think the Board needs to look at creating Committee chair positions for each board 
-	member with the exception of the President. I think for the incoming Board members this will 
-	help create some clarity on Board member duties and overall direction of the Board. Some 
-	ideas may include Finance, Neighborhood Communications, External Communications,
-	Improvements as well as the existing Building committee.
-	i. Dave: Also, I know it is a time commitment to serve as a Board member and it seems to be 
-	increasing. That being said, there needs to be attendance/participation requirements for the 
-	Board members to equalize the burden.
+6) Old Business
+  a. Bylaw’s Committee Update
+    i. STVR Surveys Results
+  b. Building Committee Updated
+    i. Survey results
+  c. Insurance policy (updating current policy)
+  d. Annual Meeting and Neighborhood cleanup
+    i. Annual Mailer reimbursement
+    ii. Annual Cleanup reimbursement
 
-7) Communications
+7) New Business
+  a. Letter to members without email to get email addresses
+  b. Volunteer to rehang neighborhood sign
+  c. Governing Documents
+    i. An Assessment Collection Policy.  This will establish interest rates, late charges, and
+    trigger points when the Board wants liens and other collection action done.
+    ii. A Rule for Fines.  This Rule incentivizes owner compliance.
+    iii. Rules as recommend above.
 
-8) Guest Comments
+8) Communications
 
-9) Meeting Adjourned 
-	a. Next Meeting Date: 06/06/2023 or 07/04/2023
+9) Guest Comments
+
+10) Executive session of board members
+  a. Discussion of Cromwell memo regarding governing documents
+
+  11) Meeting Adjourned
+  a. No July meeting
+  b. Next Meeting Date: 08/01/2023
 
 </pre>
             </div>
@@ -157,7 +151,7 @@ export default {
     // only show the upcoming agenda until a little after the meeting date (March 7th)
     onTime() {
       const now = moment();
-      const later = moment("2023-05-03 02:00");
+      const later = moment("2023-06-07 02:00");
       return now.isBefore(later);
     },
   },
