@@ -3,7 +3,29 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="jumbotron pb-3 pt-1">
+        <div class="jumbotron pb-3 pt-1" v-if="!authorized">
+          <h2 class="my-4">Meeting Notes</h2>
+
+          <div
+            v-if="passwordError"
+            class="alert alert-danger mt-2"
+            role="alert"
+          >
+            Invalid password - you can reach out for assistance via the Contact
+            page
+          </div>
+
+          Password:
+          <input
+            class="ml-2"
+            type="text"
+            v-model="password"
+            @keyup.enter="openSesame"
+          />
+          <button class="btn btn-sm btn-primary ml-3">Open Sesame</button>
+        </div>
+
+        <div class="jumbotron pb-3 pt-1" v-if="authorized">
           <h2 class="my-4">Meeting Notes</h2>
 
           <div class="row">
@@ -155,6 +177,9 @@ export default {
   },
   data() {
     return {
+      authorized: false,
+      password: "",
+      passwordError: false,
       meetingNotes: MEETING_NOTES_DATA,
       years: MEETING_NOTES_YEARS,
       selectedYear: "All Years",
@@ -169,6 +194,16 @@ export default {
 
     showPassCode(note: any) {
       note.showPassCode = true;
+    },
+
+    openSesame() {
+      // super secure system with zero pitfalls
+      if (this.password.toLowerCase() == "shadowbear") {
+        this.authorized = true;
+      } else {
+        this.password = "";
+        this.passwordError = true;
+      }
     },
 
     dateIt(value: any) {

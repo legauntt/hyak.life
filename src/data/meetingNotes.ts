@@ -52,6 +52,22 @@ const entriesFor2023: IMeeting[] = [
       passCode: "=1QN1&cs",
     },
   },
+  {
+    date: "2023-05-02",
+    category: "regular",
+    title: "Minutes",
+    filename: "May 2023 Meeting Minutes HPOA.docx",
+  },
+  {
+    date: "2023-06-06",
+    category: "recording",
+    title: "Recording",
+    filename: "-",
+    recording: {
+      link: "https://zoom.us/rec/share/DnEtD34nr8-4VFFaoN0q_trWCpDWF0RYRghQmOjVTeODQIm_s_jO65U-qhaD-nbe.BiiLZrNCnb1NhOO2",
+      passCode: "ipGGPb.2",
+    },
+  },
 ];
 
 /**
