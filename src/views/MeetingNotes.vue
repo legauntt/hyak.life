@@ -22,7 +22,7 @@
             v-model="password"
             @keyup.enter="openSesame"
           />
-          <button class="btn btn-sm btn-primary ml-3">Open Sesame</button>
+          <button class="btn btn-sm btn-primary ml-3" @click="openSesame">Open Sesame</button>
         </div>
 
         <div class="jumbotron pb-3 pt-1" v-if="authorized">
