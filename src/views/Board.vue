@@ -10,12 +10,11 @@
           <div class="py-2 bg-white">
             <div class="mt-2">
               <p>Betsy Bankson - President</p>
-              <p>Dave Warmenhoven - Vice President</p>
-              <p>Julia Sargeant - Secretary and Treasurer</p>
-              <p>Matthew Fuhr</p>
+              <p>Michael James - Vice President</p>
+              <p>Julia Sargeant - Secretary</p>
+              <p>Steve Griffith</p>
               <p>Barbie McQuay</p>
-              <p>Michelle Peterson</p>
-              <p>Jim Sammet</p>
+              <p>Matt Fuhr</p>
             </div>
           </div>
 
