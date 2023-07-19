@@ -13,7 +13,7 @@
             class="alert alert-info alert-dismissible fade show mt-2"
             role="alert"
           >
-            The next meeting is June 6th at 6:30pm
+            The next meeting is Aug 1st at 6:30pm
 
             <button
               type="button"
