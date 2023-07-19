@@ -69,61 +69,51 @@
                 "
                 v-if="onTime"
               >
-<h3>Upcoming Meeting Agenda for Tuesday, June 6th</h3>
-1) Meeting Called to order
-  a. Board members present
-  b. Welcome guests
+<h3>Upcoming Meeting Agenda for Tuesday, Aug 1st</h3>
+1)	Meeting Called to order 
+	a.	Board members present
+	b.	Welcome guests
 
-2) New Board Members
-  a. Election of positions
-    i. President
-    ii. Vice President
-    iii. Secretary
-  iv. Treasurer
-    b. Building Committee
+2)	New Board Members
+	a.	Appointment of Board Member Vacancy per Article IV Section 7: 
+		i.	Any vacancy occurring in the Board of Trustees shall be filled by appointment by a majority of the remaining Trustees. The person so appointed shall hold office until the next regular meeting of the members of the Corporation at which Annual or adjourned Annual Meeting the vacancies for the remainder of the original terms, if any, shall be filled by election by the members in the regular manner.
+	b.	Appointment of Treasurer Position 
 
-3) Meeting Minutes Approval from
-  a. 05/02/2022 Meeting
+3)	Meeting Minutes Approval from 
+	a.	06/06/2022 Meeting
 
-4) Report of Administrator
-  a. Attachments
-  b. Annual Budget
+4)	Report of Administrator
+	a.	Attachments
+	b.	Annual Budget
+	c.	Past dues over $250.00 Lien file for 3 lots
 
-5) Building Committee: (Building applications are accepted up to 10 days prior to meetings)
-  a. Lot 54 Gagnon
-  b. 321 Innsbruck - Michael and Tasha James
-  c. Lot 48 – Renich (tree removal)
+5)	Building Committee: (Building applications are accepted up to 10 days prior to meetings)
+	a.	None submitted by 7.18.2023
 
-6) Old Business
-  a. Bylaw’s Committee Update
-    i. STVR Surveys Results
-  b. Building Committee Updated
-    i. Survey results
-  c. Insurance policy (updating current policy)
-  d. Annual Meeting and Neighborhood cleanup
-    i. Annual Mailer reimbursement
-    ii. Annual Cleanup reimbursement
+6)	Old Business
+	a.	Bylaw’s Committee Update
+	b.	Building Committee Updated 
+	c.	Insurance policy (updating current policy)
+	d.	Annual Meeting and Neighborhood cleanup
+		i.	Annual Mailer reimbursement 
+		ii.	Annual Cleanup reimbursement
+	e.	Payment to Barb and Ed Quire for neighborhood sign repairs $300
 
-7) New Business
-  a. Letter to members without email to get email addresses
-  b. Volunteer to rehang neighborhood sign
-  c. Governing Documents
-    i. An Assessment Collection Policy.  This will establish interest rates, late charges, and
-    trigger points when the Board wants liens and other collection action done.
-    ii. A Rule for Fines.  This Rule incentivizes owner compliance.
-    iii. Rules as recommend above.
+7)	New Business
+	a.	Special Meeting of the Board of Directors summary
+		i.	Board Code of Conduct
+		ii.	Covenants enforcement, policy and implementation plan
+		iii.	Volunteers for Covenants Committee
+		iv.	Covenants Survey
+	b.	Neighbor Complaints form and policy
+	c.	Donation to Snoqualmie Pass Fire and Rescue from 2023-2024 Budget
 
-8) Communications
+8)	Communications
 
-9) Guest Comments
+9)	Guest Comments
 
-10) Executive session of board members
-  a. Discussion of Cromwell memo regarding governing documents
-
-  11) Meeting Adjourned
-  a. No July meeting
-  b. Next Meeting Date: 08/01/2023
-
+10)	Meeting Adjourned 
+	a.	Next Meeting Date: 09/05/2023
 </pre>
             </div>
 
@@ -150,7 +140,7 @@ export default {
     // only show the upcoming agenda until a little after the meeting date (March 7th)
     onTime() {
       const now = moment();
-      const later = moment("2023-06-07 02:00");
+      const later = moment("2023-08-02 02:00");
       return now.isBefore(later);
     },
   },
