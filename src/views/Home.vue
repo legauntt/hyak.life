@@ -13,7 +13,7 @@
             class="alert alert-info alert-dismissible fade show mt-2"
             role="alert"
           >
-            The next meeting is Sep 5th at 6:30pm
+            The next meeting is Oct 3rd at 6:30pm
 
             <button
               type="button"
@@ -69,47 +69,39 @@
                 "
                 v-if="onTime"
               >
-<h3>Upcoming Meeting Agenda for Tuesday, Sep 5th</h3>
+<h3>Upcoming Meeting Agenda for Tuesday, Oct 3rd</h3>
 1) Meeting Called to order
-a. Board members present
-b. Welcome guests
+	a. Board members present
+	b. Welcome guests
 
-2) New Board Members
-a. Appointment of Board Member Vacancy per Article IV Section 7:
-	i. Any vacancy occurring in the Board of Trustees shall be filled by appointment by a
-	majority of the remaining Trustees. The person so appointed shall hold office until the
-	next regular meeting of the members of the Corporation at which Annual or adjourned
-	Annual Meeting the vacancies for the remainder of the original terms, if any, shall be
-	filled by election by the members in the regular manner.
+2) Meeting Minutes Approval from
+	a. 09/05/2022 Meeting
 
-3) Meeting Minutes Approval from
-a. 08/01/2022 Meeting
+3) Report of Administrator
+	a. Attachments
 
-4) Report of Administrator
-a. Attachments
+4) Building Committee: (Building applications are accepted up to 10 days prior to meetings)
+	a. None submitted by 9.19.2023
 
-5) Building Committee: (Building applications are accepted up to 10 days prior to meetings)
-a. None submitted by 8.22.2023
+5) Old Business
+	a. Bylaw’s Committee Update
+	b. Building Committee Updated
+	c. Insurance policy
+	d. Annual Meeting and Neighborhood cleanup reimbursement
 
-6) Old Business
-a. Bylaw’s Committee
-b. Covenants Enforcement Committee
-c. Building Committee
-d. Insurance policy (updating current policy)
-e. Annual Meeting and Neighborhood cleanup reimbursement
+6) New Business
+	a. Covenant Committee
+	b. Signage Committee
 
-7) New Business
-a. Volunteers for Hyak Signage Community
-b. Construction Debris and Clean Up
-c. Proposed Easement Granting to HPOA
-d. Neighborhood Firewising
+7) Communications
 
-8) Communications
+8) Guest Comments
 
-9) Guest Comments
+9) Executive session for Board Members
+	a. Discussion on Legal issue
 
 10) Meeting Adjourned
-a. Next Meeting Date: 09/05/2023
+	a. Next Meeting Date: 11/07/2023
 </pre>
             </div>
 
@@ -136,7 +128,7 @@ export default {
     // only show the upcoming agenda until a little after the meeting date (March 7th)
     onTime() {
       const now = moment();
-      const later = moment("2023-09-06 02:00");
+      const later = moment("2023-10-04 02:00");
       return now.isBefore(later);
     },
   },
