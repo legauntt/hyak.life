@@ -30,7 +30,7 @@
 
             <div>
               <img
-                src="teasers/mostly_hyak.webp"
+                src="/teasers/mostly_hyak.webp"
                 style="height: 500px; object-fit: contain"
               />
             </div>
