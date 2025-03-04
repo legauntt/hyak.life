@@ -27,7 +27,15 @@
 
           <div class="jumbotron pt-3 pb-3">
             <h1>Welcome!</h1>
-            <p class="lead">
+
+            <div>
+              <img
+                src="teasers/mostly_hyak.webp"
+                style="height: 500px; object-fit: contain"
+              />
+            </div>
+
+            <p class="lead mt-3">
               <a
                 target="_blank"
                 href="https://en.wikipedia.org/wiki/Hyak,_Washington?ref=hyak"

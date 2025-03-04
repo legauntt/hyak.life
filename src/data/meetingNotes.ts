@@ -15,6 +15,84 @@ export interface IMeeting {
 }
 
 /**
+ * 2025!
+ */
+const entriesFor2025: IMeeting[] = [
+  {
+    date: "2025-01-07",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes - January 7th 2025.pdf",
+  },
+  {
+    date: "2025-02-04",
+    category: "regular",
+    title: "Meeting cancelled",
+    filename: "-",
+  },
+];
+
+/**
+ * 2024!
+ */
+const entriesFor2024: IMeeting[] = [
+  {
+    date: "2024-01-02",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Board Meeting Minutes January 2, 2024.pdf",
+  },
+  {
+    date: "2024-02-06",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting 02.06.2024 Minutes.pdf",
+  },
+  {
+    date: "2024-03-05",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting 03.05.2024 Minutes.pdf",
+  },
+  {
+    date: "2024-04-04",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Board Meeting Minutes April 2, 2024.pdf",
+  },
+  {
+    date: "2024-07-02",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA meeting minutes July 2, 2024.pdf",
+  },
+  {
+    date: "2024-08-06",
+    category: "regular",
+    title: "Minutes",
+    filename: "August  2024 HPOA Meeting Notes.pdf",
+  },
+  {
+    date: "2024-09-03",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes - September 3 2024.pdf",
+  },
+  {
+    date: "2024-11-05",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes - November 5 2024 (1).pdf",
+  },
+  {
+    date: "2024-12-03",
+    category: "regular",
+    title: "Minutes",
+    filename: "HPOA Meeting Minutes - December 3 2024.pdf",
+  },
+];
+
+/**
  * 2023!
  */
 const entriesFor2023: IMeeting[] = [
@@ -747,6 +825,8 @@ const entriesFor2007: IMeeting[] = [
 ];
 
 const allEntries: IMeeting[] = ([] as IMeeting[]).concat(
+  entriesFor2025,
+  entriesFor2024,
   entriesFor2023,
   entriesFor2022,
   entriesFor2021,
