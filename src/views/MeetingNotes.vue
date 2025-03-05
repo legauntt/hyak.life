@@ -15,6 +15,14 @@
             page
           </div>
 
+          <div v-if="apiError" class="alert alert-danger mt-2" role="alert">
+            Failed to connect to the server
+          </div>
+
+          <div v-if="loggingIn" class="alert alert-info mt-2" role="alert">
+            Logging in...
+          </div>
+
           Password:
           <input
             class="ml-2"
@@ -22,13 +30,21 @@
             v-model="password"
             @keyup.enter="openSesame"
           />
-          <button class="btn btn-sm btn-primary ml-3" @click="openSesame">
+          <button
+            class="btn btn-sm btn-primary ml-3"
+            @click="openSesame"
+            :disabled="loggingIn"
+          >
             Open Sesame
           </button>
         </div>
 
         <div class="jumbotron pb-3 pt-1" v-if="authorized">
           <h2 class="my-4">Meeting Notes</h2>
+
+          <div v-if="loading" class="alert alert-info mt-2" role="alert">
+            Loading...
+          </div>
 
           <div class="row">
             <div class="col-lg-6">
@@ -122,15 +138,29 @@
 </template>
 
 <script lang="ts">
-import { MEETING_NOTES_DATA, MEETING_NOTES_YEARS } from "@/data/meetingNotes";
 import moment from "moment";
+import axios from "axios";
+
+const BACKEND_URL =
+  "https://hyak-bvdnchhvefd8gwaj.westus2-01.azurewebsites.net";
+
+interface IMeeting {
+  date: string;
+  category: string;
+  title: string;
+  filename: string;
+  recording?: {
+    link: string;
+    passCode: string;
+  };
+}
 
 export default {
   name: "meeting-notes",
   components: {},
   computed: {
     filteredMeetingNotes: function (): any {
-      return this.meetingNotes.filter((entry) => {
+      return this.meetingNotes.filter((entry: IMeeting) => {
         // Everything
         if (
           this.selectedYear == "All Years" &&
@@ -180,11 +210,14 @@ export default {
   data() {
     return {
       // super secure system with zero pitfalls
-      authorized: window.location.host.includes("localhost") ? true : false,
+      authorized: false,
       password: "",
       passwordError: false,
-      meetingNotes: MEETING_NOTES_DATA,
-      years: MEETING_NOTES_YEARS,
+      loggingIn: false,
+      apiError: false,
+      meetingNotes: [],
+      years: [],
+      loading: false,
       selectedYear: "All Years",
       selectedType: "All Types",
     };
@@ -192,21 +225,70 @@ export default {
   methods: {
     getLink(note: any) {
       const year = moment(note.date, moment.ISO_8601).year();
-      return `hyak_files/meeting_notes/${year}/${note.filename}`;
+      return `${BACKEND_URL}/meeting_notes/${year}/${note.filename}`;
     },
 
     showPassCode(note: any) {
       note.showPassCode = true;
     },
 
-    openSesame() {
-      // super secure system with zero pitfalls
-      if (this.password.toLowerCase() == "shadowbear") {
-        this.authorized = true;
-      } else {
-        this.password = "";
-        this.passwordError = true;
+    async fetchFiles() {
+      this.loading = true;
+      this.apiError = false;
+
+      try {
+        const response = await axios.get(
+          `${BACKEND_URL}/chairlift/meeting_notes?pw=${this.password}`
+        );
+
+        if (
+          !Array.isArray(response.data.years) ||
+          !Array.isArray(response.data.entries)
+        ) {
+          console.error(`Invalid response from API`, response.data);
+          this.apiError = true;
+        } else {
+          this.years = response.data.years;
+          this.meetingNotes = response.data.entries;
+        }
+      } catch (e) {
+        this.apiError = true;
+        console.error(`Error when fetching meething notes`, e);
       }
+
+      this.loading = false;
+    },
+
+    openSesame() {
+      if (this.loggingIn) {
+        return;
+      }
+      this.apiError = false;
+      this.passwordError = false;
+      this.loggingIn = true;
+
+      axios
+        .post(`${BACKEND_URL}/chairlift/login`, {
+          pw: this.password,
+        })
+        .then((response) => {
+          this.loggingIn = false;
+          if (response.data.success) {
+            this.authorized = true;
+            this.fetchFiles();
+          } else {
+            this.passwordError = true;
+          }
+        })
+        .catch((err) => {
+          this.loggingIn = false;
+          if (err.response.data?.success === false) {
+            this.passwordError = true;
+          } else {
+            this.apiError = true;
+            console.error(`Failed to hit login API`, err);
+          }
+        });
     },
 
     dateIt(value: any) {
