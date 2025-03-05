@@ -29,10 +29,7 @@
             <h1>Welcome!</h1>
 
             <div>
-              <img
-                src="/teasers/mostly_hyak.webp"
-                style="height: 500px; object-fit: contain"
-              />
+              <img id="winterlife" src="/teasers/mostly_hyak.webp" />
             </div>
 
             <p class="lead mt-3">
@@ -148,9 +145,9 @@ export default {
   margin: 5px;
 }
 
-.teaser-image {
+#winterlife {
   object-fit: contain;
   width: 100%;
-  border: 3px goldenrod inset;
+  max-height: 50vh;
 }
 </style>
