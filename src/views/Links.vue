@@ -22,8 +22,8 @@
           <li>
             <a
               target="_blank"
-              href="http://media.wsdot.wa.gov/asxgen/audio/har/Snoq_Summit/summit.wma"
-              >WSDOT - Highway Advisory Radio</a
+              href="https://engage.wsdot.wa.gov/i-90-construction-from-north-bend-to-vantage/stay-connected/"
+              >WSDOT - Stay Connected</a
             >
           </li>
         </ul>
@@ -33,12 +33,12 @@
         <p class="lead">Other Things</p>
         <ul class="list-unstyled">
           <li>
-            <a target="_blank" href="http://www.snopass.org/"
+            <a target="_blank" href="https://snopass.org/"
               >Snoqualmie Pass Utility District (SPUD)</a
             >
           </li>
           <li>
-            <a target="_blank" href="http://www.summit-at-snoqualmie.com/"
+            <a target="_blank" href="https://www.summitatsnoqualmie.com/"
               >Summit at Snoqualmie Ski Resort</a
             >
           </li>
