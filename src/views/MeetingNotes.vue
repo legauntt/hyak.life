@@ -157,6 +157,13 @@ interface IMeeting {
 
 export default {
   name: "meeting-notes",
+  created() {
+    if (sessionStorage?.chairliftPassword) {
+      this.authorized = true;
+      this.password = sessionStorage.chairliftPassword;
+      this.fetchFiles();
+    }
+  },
   components: {},
   computed: {
     filteredMeetingNotes: function (): any {
@@ -260,9 +267,10 @@ export default {
     },
 
     openSesame() {
-      if (this.loggingIn) {
+      if (this.loggingIn || this.password.length < 1) {
         return;
       }
+
       this.apiError = false;
       this.passwordError = false;
       this.loggingIn = true;
@@ -276,6 +284,7 @@ export default {
           if (response.data.success) {
             this.authorized = true;
             this.fetchFiles();
+            sessionStorage.chairliftPassword = this.password;
           } else {
             this.passwordError = true;
           }

@@ -28,8 +28,6 @@
               </p>
             </div>
           </div>
-
-          <HyakMeetings />
         </div>
       </div>
     </div>
