@@ -291,7 +291,7 @@ export default {
         })
         .catch((err) => {
           this.loggingIn = false;
-          if (err.response.data?.success === false) {
+          if (err.response?.data?.success === false) {
             this.passwordError = true;
           } else {
             this.apiError = true;
