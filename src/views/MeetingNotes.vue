@@ -142,7 +142,7 @@ import moment from "moment";
 import axios from "axios";
 
 const BACKEND_URL =
-  "https://hyak-bvdnchhvefd8gwaj.westus2-01.azurewebsites.net";
+  "https://chairlift.fly.dev";
 
 interface IMeeting {
   date: string;
