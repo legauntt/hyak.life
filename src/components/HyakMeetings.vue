@@ -4,7 +4,8 @@
 
     <ul class="list-group">
       <li class="list-group-item">
-        <strong>When:</strong> First Tuesday of every month
+        <strong>When:</strong> First Tuesday of every (other) month. Usually odd
+        months (Jan, Mar, May, Jul, Sep, Nov)
         <br />
       </li>
       <li class="list-group-item"><strong>Time:</strong> 6:30 PM</li>
